@@ -1,0 +1,34 @@
+@Api_HostAddress = http://localhost:5027/api
+@Todo_Id = 00000000-0000-0000-0000-000000000000
+
+GET {{Api_HostAddress}}/all/0
+Accept: application/json
+###
+
+GET {{Api_HostAddress}}/{{Todo_Id}}
+Accept: application/json
+###
+
+POST {{Api_HostAddress}}/new
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Title": "New Todo",
+  "Description": "New Description"
+}
+###
+
+PATCH {{Api_HostAddress}}/{{Todo_Id}}
+Content-Type: application/json
+Accept: application/json
+
+{
+  "Title": "Updated Title",
+  "Description": "Updated Description"
+}
+###
+
+DELETE {{Api_HostAddress}}/{{Todo_Id}}
+Accept: application/json
+###
